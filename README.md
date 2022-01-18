@@ -41,7 +41,7 @@ simple. The word clock is in German, by the way. If you don't speak German,
 consider this an opportunity to learn some in preparation for the next
 Oktoberfest!
 
-![Image of our Setup](./resources/setup_transparent-bg.png "Our Setup")
+![Image of our Setup](./resources/setup.png "Our Setup")
 
 Before you say anything: yes, it's true, there's no real reason to use a CAN bus
 for this project. Nevertheless, it's useful to add CAN into the mix as a way to

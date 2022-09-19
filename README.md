@@ -229,6 +229,9 @@ to study.
 
 And then, finally, let's see if it works!
 
+(there should be a video shown here; if it isn't, find it
+ [here](./resources/can-wordclock-video.mp4))
+
 <figure class="video_container">
   <video controls="true" allowfullscreen="true">
     <source src="./resources/can-wordclock-video.mp4" type="video/mp4">

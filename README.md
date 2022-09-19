@@ -17,19 +17,19 @@ prototype-style wire-up of [WS2812
 LEDs](https://cdn-shop.adafruit.com/datasheets/WS2812.pdf), all connected to a
 Raspberry Pi.
 
-He then got in touch with us, and now we're working together to make his word
-clock project even cooler. It will have a custom PCB for the LEDs that will
-include a connector for the mini::base. And that PCB will have the mini::pit
-schematics printed on it! More on that in a later post. Today, we want to look at
-a quick showcase we hacked together based on:
+He then got in touch with us, and we worked together to make his word clock
+project even cooler. A [BluePill
+board](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html) with the CAN
+wired up is used here. Everything you'll need should be documented in this
+repo here.
 
 - Our friend's existing prototype
-- The **mini::base** with a **mini::out**
+- The BluePill board with CAN wired up
 - The following software:
   - [stm32f1xx-hal](https://github.com/stm32-rs/stm32f1xx-hal), which is a Rust implementation of the core functionality for the STM32F1 series
   - The [knurling-rs app template](https://github.com/knurling-rs/app-template) developed by [the knurling-rs project](https://knurling.ferrous-systems.com/) for bare-metal Rust
-- A USB-CAN bridge ([`usb-can`](https://github.com/bmc-labs/usb-can), from our
-  earlier update, which is based on [the USBtin](https://www.fischl.de/usbtin/))
+- A USB-CAN bridge ([`usb-can`](https://github.com/bmc-labs/usb-can), which is
+    based on [the USBtin](https://www.fischl.de/usbtin/))
 - A Debian laptop that communicates the time to the clock via CAN.
 
 So let's dive in!
@@ -43,10 +43,9 @@ Oktoberfest!
 
 ![Image of our Setup](./resources/setup.png "Our Setup")
 
-Before you say anything: yes, it's true, there's no real reason to use a CAN bus
-for this project. Nevertheless, it's useful to add CAN into the mix as a way to
-highlight a few important aspects of the **mini::base**. And, anyway, it's just
-fun to play with CAN bus when given the opportunity.
+Before you say anything: yes, it's true, there's no real reason to use a CAN
+bus for this project. Nevertheless, we added CAN into the mix as it's just fun
+to play with CAN bus when given the opportunity.
 
 ### Brave New World
 
@@ -225,9 +224,8 @@ the board LEDs:
     }
 ```
 
-The full code example is in [the board-mini GitHub
-repo](https://github.com/bmc-labs/board-mini/tree/trunk/mini-base/rust-examples/can-controlled-wordclock)
-for you to study.
+The full code example is in [the `nerdclock` subdirectory](./nerdclock) for you
+to study.
 
 And then, finally, let's see if it works!
 
